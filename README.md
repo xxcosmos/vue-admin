@@ -1,19 +1,14 @@
 # vue-admin
 
->
-## Extra
-
-如果你想要根据用户角色来动态生成侧边栏和 router，你可以使用该分支[permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
-
 
 ## Build Setup
 
 ```bash
 # 克隆项目
-git clone https://github.com/PanJiaChen/vue-admin-template.git
+git clone https://github.com/xxcosmos/vue-admin.git
 
 # 进入项目目录
-cd vue-admin-template
+cd vue-admin
 
 # 安装依赖
 npm install

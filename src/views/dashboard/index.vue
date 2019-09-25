@@ -5,7 +5,7 @@
       <el-table-column prop="number" label="编号" width="50"></el-table-column>
       <el-table-column prop="todo" label="代办事项"></el-table-column>
     </el-table>
-<div class="dashboard-text">在厂机电信息</div>
+    <div class="dashboard-text">在厂机电信息</div>
     <el-table :data="tableData" height="250" border style="width: 30%">
       <el-table-column prop="number" label="编号" width="50"></el-table-column>
       <el-table-column prop="todo" label="在厂机电信息"></el-table-column>
