@@ -176,6 +176,20 @@ export const constantRoutes = [
     ]
   },
 
+  {
+    path: '/table/process',
+    name: 'Process',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Process',
+        component: () => import('@/views/table/process/index'),
+        meta: { title: '用来测试的！！！', icon: 'table' }
+      }
+    ]
+  },
+
   // 404 页面必须放在最后
   { path: '*', redirect: '/404', hidden: true }
 ]

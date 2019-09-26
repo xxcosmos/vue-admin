@@ -8,35 +8,61 @@
       fit
       highlight-current-row
     >
-      <el-table-column align="center" label="ID" width="95">
+      <el-table-column align="center" label="序号" width="95">
         <template slot-scope="scope">
           {{ scope.$index }}
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="设备编号">
         <template slot-scope="scope">
           {{ scope.row.title }}
         </template>
       </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
+      <el-table-column label="备修工号" width="110" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.author }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
+      <el-table-column label="设备档案号" width="110" align="center">
         <template slot-scope="scope">
           {{ scope.row.pageviews }}
         </template>
       </el-table-column>
-      <el-table-column class-name="status-col" label="Status" width="110" align="center">
+      <el-table-column class-name="status-col" label="电机分类" width="110" align="center">
         <template slot-scope="scope">
           <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column align="center" prop="created_at" label="Display_time" width="200">
+      <el-table-column align="center" prop="created_at" label="回厂时间" width="200">
         <template slot-scope="scope">
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column align="center" prop="created_at" label="要求完工日期" width="200">
+        <template slot-scope="scope">
+          <i class="el-icon-time" />
+          <span>{{ scope.row.display_time }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="单位">
+        <template slot-scope="scope">
+          {{ scope.row.title }}
+        </template>
+      </el-table-column>
+      <el-table-column label="型号">
+        <template slot-scope="scope">
+          {{ scope.row.title }}
+        </template>
+      </el-table-column>
+      <el-table-column label="容量">
+        <template slot-scope="scope">
+          {{ scope.row.title }}
+        </template>
+      </el-table-column>
+      <el-table-column label="当前状况">
+        <template slot-scope="scope">
+          {{ scope.row.title }}
         </template>
       </el-table-column>
     </el-table>
