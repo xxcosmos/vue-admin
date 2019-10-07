@@ -177,19 +177,46 @@ export const constantRoutes = [
   },
 
   {
-    path: '/table/process',
-    name: 'Process',
+    path: '/table/process/detail/breakDown',
+    name: 'BreakDown',
     component: Layout,
     children: [
       {
         path: 'index',
-        name: 'Process',
-        component: () => import('@/views/table/process/index'),
-        meta: { title: '用来测试的！！！', icon: 'table' }
+        name: 'BreakDown',
+        component: () => import('@/views/table/process/detail/breakDown/index'),
+        meta: { title: '分解', icon: 'table' }
       }
     ]
   },
 
+  {
+    path: '/table/process/detail/register',
+    name: 'Register',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Register',
+        component: () => import('@/views/table/process/detail/register/index'),
+        meta: { title: '回厂登记', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/table/process/detail/dianqi',
+    name: 'Dianqi',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Dianqi',
+        component: () => import('@/views/table/process/detail/dianqi/index'),
+        meta: { title: '电气检查和处理', icon: 'table' }
+      }
+    ]
+  },
   // 404 页面必须放在最后
   { path: '*', redirect: '/404', hidden: true }
 ]

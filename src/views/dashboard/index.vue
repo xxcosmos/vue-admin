@@ -2,15 +2,15 @@
   <div class="dashboard-container">
     <div class="dashboard-box">
       <div class="dashboard-text">代办事项</div>
-      <el-table :data="tableData" height="250" border style="display: inline-block;">
+      <el-table :data="tableData" height="240" border style="display: inline-block;">
         <el-table-column prop="number" label="编号" width="50"></el-table-column>
         <el-table-column prop="todo" label="代办事项"></el-table-column>
       </el-table>
     </div>
     
-    <div class="dashboard-box">
-      <div class="dashboard-text">在厂机电信息</div>
-      <el-table :data="tableData" height="250" border style="display: inline-block;">
+    <div class="dashboard-box" style="margin-left: 80px;">
+      <div class="dashboard-text" >在厂机电信息</div>
+      <el-table :data="tableData" height="240" border style="display: inline-block;">
         <el-table-column prop="number" label="编号" width="50"></el-table-column>
         <el-table-column prop="todo" label="在厂机电信息"></el-table-column>
       </el-table>
@@ -18,15 +18,15 @@
     
     <div class="dashboard-box">
       <div class="dashboard-text">昨日试验合格电机</div>
-      <el-table :data="tableData" height="250" border style="display: inline-block;">
+      <el-table :data="tableData" height="240" border style="display: inline-block;">
         <el-table-column prop="number" label="编号" width="50"></el-table-column>
         <el-table-column prop="todo" label="昨日试验合格电机"></el-table-column>
       </el-table>
     </div>
     
-    <div class="dashboard-box">
+    <div class="dashboard-box" style="margin-left: 80px;">
       <div class="dashboard-text">当日巡检问题</div>
-      <el-table :data="tableData" height="250" border style="display: inline-block;">
+      <el-table :data="tableData" height="240" border style="display: inline-block;">
         <el-table-column prop="number" label="编号" width="50"></el-table-column>
         <el-table-column prop="todo" label="当日巡检问题"></el-table-column>
       </el-table>
@@ -80,14 +80,14 @@ export default {
   &-box {
     display: inline-block;
     width: 40%;
-    margin: 20px;
+    margin: 25px;
   }
   &-container {
     margin: 10px;
   }
   &-text {
     font-size: 30px;
-    line-height: 46px;
+    line-height: 45px;
     // background-color: pink;
     // width: 30%;
   }

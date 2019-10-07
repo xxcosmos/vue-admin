@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
+
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -39,3 +40,22 @@ new Vue({
   store,
   render: h => h(App)
 })
+
+
+Vue.directive('enterNumber', {
+  inserted: function (el) {
+    el.addEventListener("keypress",function(e){
+      e = e || window.event;
+      let charcode = typeof e.charCode == 'number' ? e.charCode : e.keyCode;
+      let re = /\d/;
+      if(!re.test(String.fromCharCode(charcode)) && charcode > 9 && !e.ctrlKey){
+          if(e.preventDefault){
+              e.preventDefault();
+          }else{
+              e.returnValue = false;
+          }                            
+      }
+    });
+  }
+});
+
