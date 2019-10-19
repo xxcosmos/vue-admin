@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-page-header title="" @back="goBack" content="电机修复工序流程：分解环节">
+        <el-page-header title="" @back="goBack" content="电机修复工序流程：电气检查和处理">
         </el-page-header>
         <div class="dianqi-container">
             <formhead></formhead>
@@ -446,6 +446,39 @@
                                     </el-col>
                                 </el-row>
                             </el-card>
+
+                            <el-card shadow="never">
+                                <div class="dianqi-title">
+                                    特殊交流绕组展开图(特殊扁线转子一相展开图)
+                                </div>
+                                绘制主极绕组、补极绕组的接线草图（常规不要求）
+                                <el-button>上传图片</el-button>
+                            </el-card>
+                            <el-card shadow="never">
+                                <div class="dianqi-title">
+                                    注意事项
+                                </div>
+                                <el-form-item  prop="attention">
+                                    <el-input size="small" show-word-limit :maxlength="200"  type="textarea" :rows="2" v-model="form2.attention"></el-input>
+                                </el-form-item>
+                            </el-card>
+                            <el-row :gutter="40">
+                                <el-col :span="6">
+                                    <el-form-item v-if="ABCType == 'A' || 'B' || 'C'" label-width="80px" prop="sure1" label="确认人1">
+                                        <el-input size="small" v-model="form2.sure1"></el-input>
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :span="6">
+                                    <el-form-item v-if="ABCType == 'A' || 'B'" label-width="80px" prop="sure2" label="确认人2">
+                                        <el-input size="small" v-model="form2.sure2"></el-input>
+                                    </el-form-item>
+                                </el-col>
+                                <el-col :span="6">
+                                    <el-form-item v-if="ABCType == 'C'" label-width="80px" prop="sure3" label="确认人3">
+                                        <el-input size="small" v-model="form2.sure3"></el-input>
+                                    </el-form-item>
+                                </el-col>
+                            </el-row>
                             
                             <el-row :gutter="20">
                                 <el-col :span="16" :offset="8">
@@ -489,7 +522,7 @@ export default {
          return {
              powerSure: true,
             powerCancelSure: true,
-             ABCType: 'B',
+             ABCType: 'C',
              daxiu: true,
              form1: {
                  yinchuxian: {
@@ -578,8 +611,14 @@ export default {
                          chang: '',
                          kuan: '',
                          gao: ''
-                     }
-                 }
+                     },
+                 },
+                 caotuURL: '',
+                shangchuanURL: '',
+                attention: '',
+                sure1: '',
+                sure2: '',
+                sure3: ''
              },
              
              rules1: {

@@ -177,6 +177,20 @@ export const constantRoutes = [
   },
 
   {
+    path: '/table/process',
+    name: 'Process',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Process',
+        component: () => import('@/views/table/process/index'),
+        meta: { title: '总流程', icon: 'table' }
+      }
+    ]
+  },
+
+  {
     path: '/table/process/detail/breakDown',
     name: 'BreakDown',
     component: Layout,
@@ -214,6 +228,89 @@ export const constantRoutes = [
         name: 'Dianqi',
         component: () => import('@/views/table/process/detail/dianqi/index'),
         meta: { title: '电气检查和处理', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/table/process/detail/jixie/gundong',
+    name: 'JixieG',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'JixieG',
+        component: () => import('@/views/table/process/detail/jixie/gundong/index'),
+        meta: { title: '机械检查和处理（滚动轴承）', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/table/process/detail/jixie/huadong',
+    name: 'JixieH',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'JixieH',
+        component: () => import('@/views/table/process/detail/jixie/huadong/index'),
+        meta: { title: '机械检查和处理（滑动轴承）', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/table/process/detail/buildUp',
+    name: 'BuildUp',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'BuildUp',
+        component: () => import('@/views/table/process/detail/buildUp/index'),
+        meta: { title: '组装', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/table/process/detail/test/zhiliu',
+    name: 'TestZ',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'TestZ',
+        component: () => import('@/views/table/process/detail/test/zhiliu/index'),
+        meta: { title: '试验（直流）', icon: 'table' }
+      }
+    ]
+  },
+
+  {
+    path: '/table/process/detail/save',
+    name: 'Save',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Save',
+        component: () => import('@/views/table/process/detail/save/index'),
+        meta: { title: '存档', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/table/process/detail/finish',
+    name: 'Finish',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Finish',
+        component: () => import('@/views/table/process/detail/finish/index'),
+        meta: { title: '出厂确认', icon: 'table' }
       }
     ]
   },

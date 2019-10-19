@@ -193,47 +193,55 @@
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
+                                <el-row>
+                                    <el-col :span="12">
+                                        <el-card>
+                                            <el-row :gutter="2">
+                                                <el-col :span="6" :offset="9">
+                                                    <el-form-item prop="load.peiheSize.top" label-width="0">
+                                                        <el-input-number size="mini" v-model="form2.load.peiheSize.top" :precision="3" :step="0.001" :max="0.999" :min="0" controls-position="right"></el-input-number>
+                                                    </el-form-item>
+                                                </el-col>
+                                            </el-row>
 
-                                <el-row :gutter="2">
-                                    <el-col :span="6" :offset="4">
-                                        <el-form-item prop="load.peiheSize.top" label-width="0">
-                                            <el-input-number size="mini" v-model="form2.load.peiheSize.top" :precision="3" :step="0.001" :max="0.999" :min="0" controls-position="right"></el-input-number>
-                                        </el-form-item>
+                                            <el-row :gutter="2">
+                                                <el-col :span="18">
+                                                    <el-form-item prop="load.peiheSize.num" label="联轴器内孔配合尺寸">
+                                                        <el-input type="text" v-enter-number v-model="form2.load.peiheSize.num">
+                                                            <template slot="prepend">Ф</template>    
+                                                            <template slot="append">mm</template>    
+                                                        </el-input>                                                
+                                                    </el-form-item>
+                                                </el-col>
+                                            </el-row>
+
+                                            <el-row :gutter="2">
+                                                <el-col :span="6" :offset="9">
+                                                    <el-form-item prop="load.peiheSize.bottom" label-width="0">
+                                                        <el-input-number size="mini" v-model="form2.load.peiheSize.bottom" :precision="3" :step="0.001" :max="0" :min="-0.999" controls-position="right"></el-input-number>
+                                                    </el-form-item>
+                                                </el-col>
+                                            </el-row>
+                                        </el-card>
+                                    </el-col>
+
+                                    <el-col :span="12">
+                                        <!-- <el-col :span="6"> -->
+                                                    <el-form-item prop="load.pass" label="达标">
+                                                        <el-radio v-model="form2.load.pass" label="1">是</el-radio>
+                                                        <el-radio v-model="form2.load.pass" label="0">否</el-radio>                          
+                                                    </el-form-item>
+                                                </el-col>
+
+                                                <el-col :span="11">
+                                                    <el-form-item prop="load.other" label="其他">
+                                                        <el-input size="small" show-word-limit :maxlength="30" v-model="form2.load.other"></el-input>
+                                                    </el-form-item>
+                                                <!-- </el-col> -->
                                     </el-col>
                                 </el-row>
-
-                                <el-row :gutter="2">
-                                    <el-col :span="7">
-                                        <el-form-item prop="load.peiheSize.num" label="联轴器内孔配合尺寸">
-                                            <el-input type="text" v-enter-number v-model="form2.load.peiheSize.num">
-                                                <template slot="prepend">Ф</template>    
-                                                <template slot="append">mm</template>    
-                                            </el-input>                                                
-                                        </el-form-item>
-                                    </el-col>
-
-                                    <el-col :span="6">
-                                        <el-form-item prop="load.pass" label="达标">
-                                            <el-radio v-model="form2.load.pass" label="1">是</el-radio>
-                                            <el-radio v-model="form2.load.pass" label="0">否</el-radio>                          
-                                        </el-form-item>
-                                    </el-col>
-
-                                    <el-col :span="11">
-                                        <el-form-item prop="load.other" label="其他">
-                                            <el-input size="small" show-word-limit :maxlength="30" v-model="form2.load.other"></el-input>
-                                        </el-form-item>
-                                    </el-col>
-
-                                </el-row>
-
-                                <el-row :gutter="2">
-                                    <el-col :span="6" :offset="4">
-                                        <el-form-item prop="load.peiheSize.bottom" label-width="0">
-                                            <el-input-number size="mini" v-model="form2.load.peiheSize.bottom" :precision="3" :step="0.001" :max="0" :min="-0.999" controls-position="right"></el-input-number>
-                                        </el-form-item>
-                                    </el-col>
-                                </el-row>
+                                
+                                
                             </el-card>
 
                             <el-card shadow="never">
@@ -295,46 +303,59 @@
                                     </el-col>
                                 </el-row>
 
-                                <el-row :gutter="2">
-                                    <el-col :span="6" :offset="4">
-                                        <el-form-item prop="noLoad.peiheSize.top" label-width="0">
-                                            <el-input-number size="mini" v-model="form2.noLoad.peiheSize.top" :precision="3" :step="0.001" :max="0.999" :min="0" controls-position="right"></el-input-number>
-                                        </el-form-item>
+                                <el-row>
+                                    <el-col :span="12">
+                                        <el-card>
+                                            <el-row :gutter="2">
+                                                <el-col :span="6" :offset="9">
+                                                    <el-form-item prop="noLoad.peiheSize.top" label-width="0">
+                                                        <el-input-number size="mini" v-model="form2.noLoad.peiheSize.top" :precision="3" :step="0.001" :max="0.999" :min="0" controls-position="right"></el-input-number>
+                                                    </el-form-item>
+                                                </el-col>
+                                            </el-row>
+
+                                            <el-row :gutter="2">
+                                                <el-col :span="18">
+                                                    <el-form-item prop="noLoad.peiheSize.num" label="联轴器内孔配合尺寸">
+                                                        <el-input type="text" v-enter-number v-model="form2.noLoad.peiheSize.num">
+                                                            <template slot="prepend">Ф</template>    
+                                                            <template slot="append">mm</template>    
+                                                        </el-input>                                                
+                                                    </el-form-item>
+                                                </el-col>
+                                            </el-row>
+
+                                            <el-row :gutter="2">
+                                                <el-col :span="6" :offset="9">
+                                                    <el-form-item prop="noLoad.peiheSize.bottom" label-width="0">
+                                                        <el-input-number size="mini" v-model="form2.noLoad.peiheSize.bottom" :precision="3" :step="0.001" :max="0" :min="-0.999" controls-position="right"></el-input-number>
+                                                    </el-form-item>
+                                                </el-col>
+                                            </el-row>
+                                        </el-card>
+                                    </el-col>
+
+                                    <el-col :span="12">
+                                        <!-- <el-col :span="6"> -->
+                                            <el-form-item prop="noLoad.pass" label="达标">
+                                                <el-radio v-model="form2.noLoad.pass" label="1">是</el-radio>
+                                                <el-radio v-model="form2.noLoad.pass" label="0">否</el-radio>                          
+                                            </el-form-item>
+                                        <!-- </el-col> -->
+
+                                        <!-- <el-col :span="11"> -->
+                                            <el-form-item prop="noLoad.other" label="其他">
+                                                <el-input size="small" show-word-limit :maxlength="30" v-model="form2.noLoad.other"></el-input>
+                                            </el-form-item>
+                                        <!-- </el-col> -->
                                     </el-col>
                                 </el-row>
 
-                                <el-row :gutter="2">
-                                    <el-col :span="7">
-                                        <el-form-item prop="noLoad.peiheSize.num" label="联轴器内孔配合尺寸">
-                                            <el-input type="text" v-enter-number v-model="form2.noLoad.peiheSize.num">
-                                                <template slot="prepend">Ф</template>    
-                                                <template slot="append">mm</template>    
-                                            </el-input>                                                
-                                        </el-form-item>
-                                    </el-col>
+                                
 
-                                    <el-col :span="6">
-                                        <el-form-item prop="noLoad.pass" label="达标">
-                                            <el-radio v-model="form2.noLoad.pass" label="1">是</el-radio>
-                                            <el-radio v-model="form2.noLoad.pass" label="0">否</el-radio>                          
-                                        </el-form-item>
-                                    </el-col>
+                                
 
-                                    <el-col :span="11">
-                                        <el-form-item prop="noLoad.other" label="其他">
-                                            <el-input size="small" show-word-limit :maxlength="30" v-model="form2.noLoad.other"></el-input>
-                                        </el-form-item>
-                                    </el-col>
-
-                                </el-row>
-
-                                <el-row :gutter="2">
-                                    <el-col :span="6" :offset="4">
-                                        <el-form-item prop="noLoad.peiheSize.bottom" label-width="0">
-                                            <el-input-number size="mini" v-model="form2.noLoad.peiheSize.bottom" :precision="3" :step="0.001" :max="0" :min="-0.999" controls-position="right"></el-input-number>
-                                        </el-form-item>
-                                    </el-col>
-                                </el-row>
+                                
                             </el-card>
 
                             <el-card shadow="never">
@@ -427,17 +448,17 @@
                                 <el-row>
                                     <el-col :span="6">
                                         <el-form-item v-if="ABCType == 'A' || 'B' || 'C'" prop="sure1" label="确认人1">
-                                            <el-input size="small" show-word-limit :maxlength="40" v-model="form2.remark.sure1"></el-input>
+                                            <el-input size="small" v-model="form2.remark.sure1"></el-input>
                                         </el-form-item>
                                     </el-col>
                                     <el-col :span="6">
                                         <el-form-item v-if="ABCType == 'A' || 'B'" prop="sure2" label="确认人2">
-                                            <el-input size="small" show-word-limit :maxlength="40" v-model="form2.remark.sure2"></el-input>
+                                            <el-input size="small" v-model="form2.remark.sure2"></el-input>
                                         </el-form-item>
                                     </el-col>
                                     <el-col :span="6">
                                         <el-form-item v-if="ABCType == 'C'" prop="sure3" label="确认人3">
-                                            <el-input size="small" show-word-limit :maxlength="40" v-model="form2.remark.sure3"></el-input>
+                                            <el-input size="small" v-model="form2.remark.sure3"></el-input>
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
@@ -467,8 +488,8 @@
                                     </el-col>
                                     <el-col :span="6">
                                         <el-form-item prop="zhouchengFormat" label="轴承形式">
-                                            <el-radio v-model="form2.zhouchengFormat" label="1">滚动</el-radio>
-                                            <el-radio v-model="form2.zhouchengFormat" label="2">滑动</el-radio>
+                                            <el-radio v-model="form2.zhouchengFormat" label="gundong">滚动</el-radio>
+                                            <el-radio v-model="form2.zhouchengFormat" label="huadong">滑动</el-radio>
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
