@@ -6,7 +6,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
-
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -25,6 +24,7 @@ import '@/permission' // permission control
  * please remove it before going online! ! !
  */
 import { mockXHR } from '../mock'
+
 if (process.env.NODE_ENV === 'production') {
   mockXHR()
 }
@@ -41,21 +41,20 @@ new Vue({
   render: h => h(App)
 })
 
-
 Vue.directive('enterNumber', {
-  inserted: function (el) {
-    el.addEventListener("keypress",function(e){
-      e = e || window.event;
-      let charcode = typeof e.charCode == 'number' ? e.charCode : e.keyCode;
-      let re = /\d/;
-      if(!re.test(String.fromCharCode(charcode)) && charcode > 9 && !e.ctrlKey){
-          if(e.preventDefault){
-              e.preventDefault();
-          }else{
-              e.returnValue = false;
-          }                            
+  inserted: function(el) {
+    el.addEventListener('keypress', function(e) {
+      e = e || window.event
+      const charcode = typeof e.charCode === 'number' ? e.charCode : e.keyCode
+      const re = /\d/
+      if (!re.test(String.fromCharCode(charcode)) && charcode > 9 && !e.ctrlKey) {
+        if (e.preventDefault) {
+          e.preventDefault()
+        } else {
+          e.returnValue = false
+        }
       }
-    });
+    })
   }
-});
+})
 
